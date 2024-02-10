@@ -1,0 +1,88 @@
+---
+title: "Qué es R?"
+output: html_notebook
+---
+
+# Contexto
+
+- **"R"** es la app/programa de nuestra computadora que no tiene más que una consola en la cual podremos generar operaciones, asignar variables, correr scripts, etc etc. 
+  - Arriesgándonos a ser atrevidos, podemos ver a **R** como una **calculadora *fancy***.
+
+- Esa misma consola es la que, desde **RStudio** usualmente encontramos en una de las pestañas de la esquina inferior izquierda. 
+
+- **RStudio** es una IDE que consigue que trabajar con R sea mucho más amigable.
+
+- El tipo de documento (archivo) sobre el que estamos trabajando se llama **R-Notebook** y, por la configuración que ahora mismo tiene, generará un archivo .html con este texto compilado y los outputs (resultado de las operaciones) que generemos aquí mismo.
+
+  - Al editar el archivo, todo lo que esté dentro de los `chunks ```{r}` el notebook lo interpretará como código de R (en ciertas condiciones puede especificarse algún otro lenguaje como Pyhton, C++, SQL,..)
+  
+  - Todo lo que esté fuera de los chunks será interpretado como texto (bajo *"el filtro"* de un amigo llamado ***Markdown***, el cuál también utilizaremos cuando trabajemos desde **Jupyter Notebooks con Python**)
+
+
+# Aritmética
+
+
+- Suma: `+`
+- Resta: `-`
+- Multiplicación: `*`
+- División: `/`
+- Exponencial: `^`
+- Módulo (residuo): `%%`
+
+*(Nota mental)* Puedes ejecutar el código desde el notebook o directamente desde la terminal.
+```{r}
+5+5
+4-1
+1*2
+4^2
+45%%6
+```
+
+*(Nota mental)* Puedes escribir comentarios en el código de R utiizando el character **#** y, al momento de ejecutar R NO tronará porque omitirá ejecutar esa línea. En la consola aparecerá el comentario pero sin generar ningún cálculo
+
+```{r}
+# 4^2 estamos comentando esta línea
+45%%6
+```
+
+# Objetos (Variables) de R
+
+## Creando variables 
+Guardamos información con el operador *mayor-que* seguido de un guión, i.e., una *"flecha"*:
+
+nombre del objeto/variable |  operador de asignación que guarda a | *"la información"* en el objeto mencionado
+-----|-------------------------------------------------|-----------
+variable_01 | <-  | 42
+```{r}
+variable_01 <- 42
+variable_01
+```
+
+
+## Operando entre objetos
+
+- Comunmente usamos la información guardada en una variable para hacer alguna otra operación en alguna función posterior
+
+```{r}
+variable_02 <- variable_01^2
+variable_02
+```
+
+```{r}
+factorial(variable_01)
+```
+
+```{r}
+mean(rnorm(variable_02))
+```
+
+**¡AGUAS CON MAYÚSCULAS / MINÚSCULAS!**
+```{r}
+mean(rnorm(Variable_02))
+```
+- R tratará como diferente lo que se escriba con minúsculas / mayúsculas
+
+## Estructura de datos 
+
+Podemos guardar más de un sólo valor, número, "cosa" en un mismo objeto a través del uso de *vectores*, *matrices* o *arrays*
+
