@@ -94,7 +94,7 @@
   ### Setting up our Virtual Env
   - Install [Conda](https://www.anaconda.com/download) 🐍 and then execute from Shell:
 
-  > conda create --name dscourse_fmat python==3.7  -y -v
+  > conda create --name dscourse_fmat python==3.8  -y -v
   >
   
 
